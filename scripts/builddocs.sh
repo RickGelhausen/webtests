@@ -23,7 +23,7 @@ gem install jekyll bundler
 
 bundle install
 bundle exec jekyll build
-
+mv _site/docs/index.html _site/index.html
 
 ######################
 # Deploy the website #
