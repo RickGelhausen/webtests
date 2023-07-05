@@ -21,7 +21,9 @@ gem install jekyll bundler
 # Build the website #
 #####################
 
-jekyll build
+bundle install
+bundle exec jekyll build
+
 
 ######################
 # Deploy the website #
@@ -30,7 +32,7 @@ jekyll build
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-docroot="mktemp -d"
+docroot=$(mktemp -d)
 rsync -av "_site" "${docroot}/"
 
 pushd "${docroot}"
