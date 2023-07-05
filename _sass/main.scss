@@ -1,0 +1,17 @@
+html, body {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    margin-left: 200px; /* width of the navigation bar */
+    padding: 20px; /* adjust as necessary */
+    overflow-y: auto;
+    height: calc(100vh - 120px); /* subtract the height of the header */
+}
+
+@import "header";
+@import "nav";
+@import "home";

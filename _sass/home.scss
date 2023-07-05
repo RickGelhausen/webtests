@@ -1,0 +1,46 @@
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Center children vertically */
+}
+
+.contact-wrapper h2 {
+    color: #344a9a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-bottom: 2px solid #344a9a;
+    padding-bottom: 5px;
+}
+
+.contact-panel {
+    flex: 1;
+    padding: 20px;
+}
+
+.home-intro-image {
+    flex: 0 0 40%; /* Adjust the value 300px according to your needs */
+    padding: 20px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info dl {
+    display: flex;
+}
+
+.contact-info dt {
+    flex: 0 0 25%; /* Adjust this value according to your needs */
+    font-weight: bold;
+}
+
+.contact-info dd {
+    flex: 1;
+    margin-bottom: 0.2em;
+}
+
+.contact-info .details-block {
+    display: flex;
+    flex-direction: column;
+}

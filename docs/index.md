@@ -3,153 +3,60 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Markdown Test File
+title:  Bioinformatics
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# [](#header-1) Bioinformatics Group Freiburg
 
-[Link to another page](another-page).
+<div class="contact-wrapper">
+  <div class="contact-panel" markdown="1">
 
-There should be whitespace between paragraphs.
+## Head of the Group
+  <div class="contact-info">
+    <dl>
+      <dt>Prof Dr. Rolf Backofen</dt>
+      <div class="details-block">
+        <dd><i>E-mail:</i> <img src="http://bioinf.uni-freiburg.de/pics/mail/backofen.png" alt="mail:backofen"> </dd>
+        <dd>Phone: +49 (0) 761 / 203 - 7461</dd>
+        <dd>Fax: +49 (0) 761 / 203 - 7462</dd>
+      </div>
+    </dl>
+  </div>
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+## Secretary
+  <div class="contact-info">
+    <dl>
+      <dt>Monika Degen-Hellmuth</dt>
+      <div class="details-block">
+        <dd>E-mail: <img src="http://bioinf.uni-freiburg.de/pics/mail/secretary.png" alt="mail:monika"> </dd>
+        <dd>Phone: +49 (0) 761 / 203 - 7460</dd>
+        <dd>Fax: +49 (0) 761 / 203 - 7462</dd>
+      </div>
+    </dl>
+  </div>
 
-# [](#header-1)Header 1
+## Address
+  <div class="contact-info">
+    <dl>
+      <dt>Bioinformatics Group</dt>
+      <div class="details-block">
+        <dd>Department of Computer Science </dd>
+        <dd>Albert-Ludwigs-University Freiburg</dd>
+        <dd>Georges-Köhler-Allee 106</dd>
+        <dd>79110 Freiburg</dd>
+        <dd>Germany</dd>
+      </div>
+    </dl>
+  </div>
+  </div>
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+  <div class="home-intro-image">
+    <a href="http://www.bioinf.uni-freiburg.de/Research/index.html?en"><img src="http://bioinf.uni-freiburg.de/pics/portraits/rolf-pointing-300x205.jpg" alt="Rolf Backofen"></a>
+  </div>
+</div>
 
-## [](#header-2)Header 2
+## Blabla
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### [](#header-3)Header 3
-
-
-#### [](#header-4)Header 4 `with code not transformed`
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### [](#header-5)Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### [](#header-6)Header 6
-
-[This is a very long link which wraps and therefore doesn't overflow
-even when it comes at the beginning](.) of the line.
-
-- [This is a very long link which wraps and therefore doesn't overflow the line
-  when used first in an item ](.) in a list.
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And an ordered list, continued:
-
-1.  Item one
-1.  Item two
-
-Some text
-
-{:style="counter-reset:none"}
-1.  Item three
-1.  Item four
-
-### And an ordered list starting from 42:
-
-{:style="counter-reset:step-counter 41"}
-1.  Item 42
-1.  Item 43
-1.  Item 44
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Nesting an ol in ul in an ol
-
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-  1. level 4 item (ol)
-  1. level 4 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-
-### And a task list
-
-- [ ] Hello, this is a TODO item
-- [ ] Hello, this is another TODO item
-- [x] Goodbye, this item is done
-
-### Nesting task lists
-
-- [ ] level 1 item (task)
-   - [ ] level 2 item (task)
-   - [ ] level 2 item (task)
-- [ ] level 1 item (task)
-- [ ] level 1 item (task)
-
-### Nesting a ul in a task list
-
-- [ ] level 1 item (task)
-   - level 2 item (ul)
-   - level 2 item (ul)
-- [ ] level 1 item (task)
-- [ ] level 1 item (task)
-
-### Nesting a task list in a ul
-
-- level 1 item (ul)
-   - [ ] level 2 item (task)
-   - [ ] level 2 item (task)
-- level 1 item (ul)
-- level 1 item (ul)
+| header 1 | header 2 |
+|----------|----------|
+| blab     |  bala    |
