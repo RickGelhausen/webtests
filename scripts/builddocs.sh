@@ -33,7 +33,7 @@ git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 docroot=$(mktemp -d)
-rsync -av "_site" "${docroot}/"
+rsync -av "_site/*" "${docroot}/"
 
 pushd "${docroot}"
 
