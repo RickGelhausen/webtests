@@ -55,8 +55,3 @@ title:  Bioinformatics
   </div>
 </div>
 
-## Blabla
-
-| header 1 | header 2 |
-|----------|----------|
-| blab     |  bala    |
