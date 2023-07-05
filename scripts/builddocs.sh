@@ -55,7 +55,7 @@ msg="Updating Website for commit ${GITHUB_SHA} made on `date --date="@${SOURCE_D
 git commit -am "${msg}"
 
 # deploy to gh-pages
-git push https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git gh-pages --force
+git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git gh-pages --force
 
 popd
 
