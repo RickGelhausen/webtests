@@ -6,10 +6,8 @@ html, body {
 }
 
 .main-content {
-    margin-left: 250px; /* width of the navigation bar */
-    padding: 20px; /* adjust as necessary */
+    padding: 50px;
     overflow-y: auto;
-    height: calc(100vh - 120px); /* subtract the height of the header */
 }
 
 .main-content h1 {

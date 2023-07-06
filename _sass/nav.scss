@@ -1,44 +1,95 @@
-.sidebar {
-    box-sizing: border-box;
-    position: fixed;
-    left: 0;
-    top: 120px;
-    bottom: 0;
-    width: 250px;
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #e0e0e0;
+    padding: 10px 20px;
+    position: fixed;
+    width: calc(100% - 40px); // adjust the width to account for the padding
+    top: 120px;
+    z-index: 10;
 }
 
-.sidebar ul {
+.navbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    max-height: 80vh;
-    overflow-y: auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly; // even spacing between elements
 }
 
-.sidebar li {
-    border-bottom: 1px solid #ccc;
+.navbar li {
+    white-space: nowrap;
+    padding: 5px 10px; // padding to each list item
 }
 
-.sidebar a {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em; /* Change this value to adjust the size */
-    font-weight: 600; /* Bold */
-    box-sizing: border-box;
+.navbar a {
     text-decoration: none;
     color: #333;
     padding: 0.5rem 1rem;
-    display: block;
     transition: background-color 0.3s ease, color 0.3s ease;
-    width: 100%;
 }
 
-.sidebar a.active {
+.navbar a.active {
     background-color: #344a9a;
     color: #fff;
 }
 
-.sidebar a:hover {
+.navbar a:hover {
     background-color: #344a9a;
     color: #ffffff;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+
+    div {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 1200px) { // Change breakpoint here
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .navbar li {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 5px 0; // vertical padding when items wrap
+    }
+}
+
+@media (max-width: 690px) {
+    .navbar {
+        top: 90px;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: calc(100vh - 120px);
+        position: fixed;
+        top: 120px;
+        right: 0;
+        background-color: #e0e0e0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-open {
+        display: flex;
+    }
 }
