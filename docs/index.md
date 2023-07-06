@@ -45,13 +45,14 @@ title:  Bioinformatics
         <dd>Georges-Köhler-Allee 106</dd>
         <dd>79110 Freiburg</dd>
         <dd>Germany</dd>
+        <dd><img src="{{ site.baseurl }}/assets/images/windrose.gif"> <a href="{{ site.baseurl }}/404.html">Location</a> </dd>
       </div>
     </dl>
   </div>
   </div>
 
   <div class="home-intro-image">
-    <a href="http://www.bioinf.uni-freiburg.de/Research/index.html?en"><img src="http://bioinf.uni-freiburg.de/pics/portraits/rolf-pointing-300x205.jpg" alt="Rolf Backofen"></a>
+    <a href="http://www.bioinf.uni-freiburg.de/Research/index.html?en"><img src="{{ site.baseurl }}/assets/images/group-m.jpg" alt="Group"></a>
   </div>
 </div>
 
