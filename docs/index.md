@@ -6,7 +6,7 @@ layout: default
 title:  Bioinformatics
 ---
 
-# [](#header-1) Bioinformatics Group Freiburg
+# Bioinformatics Group Freiburg
 
 <div class="contact-wrapper">
   <div class="contact-panel" markdown="1">

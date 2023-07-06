@@ -6,10 +6,28 @@ html, body {
 }
 
 .main-content {
-    margin-left: 200px; /* width of the navigation bar */
+    margin-left: 250px; /* width of the navigation bar */
     padding: 20px; /* adjust as necessary */
     overflow-y: auto;
     height: calc(100vh - 120px); /* subtract the height of the header */
+}
+
+.main-content h1 {
+    font-size: 2em; /* Moderate increase in size */
+    color: #333; /* Maintain dark color for contrast */
+    text-transform: none; /* Maintain original case */
+    letter-spacing: 0.5px; /* Slight letter spacing */
+    border-bottom: 1px solid #ddd; /* Lighter border at the bottom */
+    padding-bottom: 0.2em; /* Less padding at the bottom */
+    margin-bottom: 0.5em; /* Less margin at the bottom */
+}
+
+.main-content h2 {
+    color: #344a9a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-bottom: 2px solid #344a9a;
+    padding-bottom: 5px;
 }
 
 @import "header";
