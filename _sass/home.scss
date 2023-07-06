@@ -1,7 +1,11 @@
 .contact-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;  /* Center children vertically */
+    align-items: center;
+
+    @media (max-width: 768px) {  // Adjust the breakpoint as per your requirement
+        flex-direction: column;
+    }
 }
 
 .contact-panel {
@@ -10,8 +14,18 @@
 }
 
 .home-intro-image {
-    flex: 0 0 40%; /* Adjust the value 300px according to your needs */
+    flex: 0 0 40%;
     padding: 20px;
+    max-width: 100%;  // Ensure the image does not overflow its container
+
+    img {
+        width: 100%;  // Make the image responsive
+        height: auto;
+    }
+
+    @media (max-width: 768px) {  // Adjust the breakpoint as per your requirement
+        width: 100%;  // Take the full width on smaller screens
+    }
 }
 
 .contact-info {
@@ -23,14 +37,21 @@
 }
 
 .contact-info dt {
-    flex: 0 0 25%; /* Adjust this value according to your needs */
+    flex: 0 0 25%;
     font-weight: bold;
 }
 
 .contact-info dd {
     flex: 1;
     margin-bottom: 0.2em;
+    display: flex;
+    align-items: center;
 }
+
+.contact-info dd img {
+    margin-right: 0.5em;
+}
+
 
 .contact-info .details-block {
     display: flex;

@@ -78,9 +78,9 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: calc(100vh - 120px);
+        height: calc(100vh - 135px);
         position: fixed;
-        top: 120px;
+        top: 135px;
         right: 0;
         background-color: #e0e0e0;
     }
@@ -90,6 +90,6 @@
     }
 
     .nav-open {
-        display: flex;
+        display: flex !important;
     }
 }

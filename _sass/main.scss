@@ -6,8 +6,10 @@ html, body {
 }
 
 .main-content {
-    padding: 50px;
+    padding: 50px 50px 100px 50px;
+    padding-top: 50px;
     overflow-y: auto;
+    height: calc(100vh - 190px); /* subtract the height of the header and the new navbar */
 }
 
 .main-content h1 {
@@ -26,6 +28,18 @@ html, body {
     font-weight: bold;
     border-bottom: 2px solid #344a9a;
     padding-bottom: 5px;
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        padding-top: 80px;
+    }
+}
+
+@media (max-width: 690px) {
+    .main-content {
+        padding-top: 40px;
+    }
 }
 
 @import "header";

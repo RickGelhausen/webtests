@@ -56,25 +56,9 @@ title:  Bioinformatics
   </div>
 </div>
 
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-TEST
+<div class="galaxy-iframe">
+		<iframe src="https://usegalaxy-eu.github.io/widgets/news.html" style="border: 0px; background: #f2f3f2; height: 500px">
+</div>
 
 TEST
 
