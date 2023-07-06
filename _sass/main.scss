@@ -13,13 +13,17 @@ html, body {
 }
 
 .main-content h1 {
-    font-size: 2em; /* Moderate increase in size */
-    color: #333; /* Maintain dark color for contrast */
-    text-transform: none; /* Maintain original case */
-    letter-spacing: 0.5px; /* Slight letter spacing */
-    border-bottom: 1px solid #ddd; /* Lighter border at the bottom */
-    padding-bottom: 0.2em; /* Less padding at the bottom */
-    margin-bottom: 0.5em; /* Less margin at the bottom */
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif; /* New font */
+    color: #333;
+    text-transform: none;
+    letter-spacing: 1px; /* Slightly larger letter spacing */
+    line-height: 1.2; /* More breathable line height */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.5em;
+    text-align: center;
 }
 
 .main-content h2 {
