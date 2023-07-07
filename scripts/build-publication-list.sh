@@ -30,7 +30,7 @@ git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$
 pushd "${mainroot}"
 
 # Add the generated file to the repository
-cp ../_includes/pub-list.html _includes/pub-list.html
+cp ${GITHUB_WORKSPACE}/_includes/pub-list.html _includes/pub-list.html
 git add _includes/pub-list.html
 
 msg="Updating Publication-list for commit ${GITHUB_SHA} made on `date --date="@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
