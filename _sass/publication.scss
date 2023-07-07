@@ -1,0 +1,158 @@
+.publications {
+    margin-top: 50px;
+}
+
+#search-bar {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    border-radius: 10px; /* Less rounded corners */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow effect */
+
+    /* Adjust the background position and size to vertically center and resize the magnifying glass */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
+    background-position: 10px center; /* Center the magnifying glass vertically */
+    background-repeat: no-repeat;
+    padding-left: 40px; /* to ensure the text does not overlap the icon */
+}
+.filter-panel {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-right: 30px; /* Reserve space for cancel button */
+}
+
+.select-container {
+    width: calc(100% - 30px); /* Adjust for cancel button space */
+}
+
+
+.filter-reset {
+    position: absolute;
+    right: 0;
+}
+
+.filter-container select {
+    margin: 5px;
+    width: 200px;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    border: 1px solid #ccc; /* Maintain a light border */
+    border-radius: 10px; /* Add rounded corners */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle drop shadow for depth */
+    appearance: none; /* Remove the default select arrow */
+    transition: box-shadow 0.3s ease; /* Add transition for hover effect */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'><path d='M5.83301 8.33337L10.0003 12.5007L14.1667 8.33337' stroke='%23667EEA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right .7em center; /* Position the icon on the right side of the select */
+    background-size: 10px; /* Size of the icon */
+}
+
+.filter-container select:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+.filter-container select:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 0 2px #719ECE; /* Add a light blue focus ring */
+}
+
+.reset-filter-icon {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.reset-filter-icon:hover {
+    transform: scale(1.1); /* Increase the size of the icon slightly when hovered */
+}
+
+.reset-filter-icon:active {
+    transform: scale(0.9); /* Decrease the size of the icon slightly when clicked */
+}
+
+.reset-filter-icon:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 0 2px #719ECE; /* Add a light blue focus ring */
+}
+
+#publication-count {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.publication {
+    margin: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Round corners for a softer, more modern look */
+    background-color:#F8F8F8; /* Light grey background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Drop shadow for depth */
+    transition: box-shadow 0.3s ease; /* Transition for hover effect */
+}
+
+.publication:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* More pronounced drop shadow on hover */
+}
+
+.publication .title a {
+    text-decoration: none; /* Remove underline from the title link */
+    font-size: 28px; /* Increase the size of the title */
+    display: block; /* Display the title as a block element to add vertical space */
+    margin-bottom: 20px; /* Add vertical space below the title */
+    text-align: left;
+}
+
+.publication .authors, .publication .journal {
+    font-style: italic; /* Make authors and journal italic */
+    font-size: 16px; /* Reduce the size compared to the title */
+    margin-bottom: 10px; /* Add some vertical space */
+}
+
+.publication .link {
+    margin-bottom: 15px; /* Add more vertical space before the link */
+}
+
+
+@media (max-width: 690px) {
+    /* 1. Increase the width of the search box */
+    #search-bar {
+        width: 100%; /* Adjust width considering padding and the icon */
+        box-sizing: border-box; /* This makes sure the input does not overflow its container due to padding */
+    }
+
+    /* 2. Reduce the top margin */
+    .publications {
+        margin-top: 40px; /* Adjust this value according to your current margin */
+    }
+
+    /* 3. Make the select boxes smaller */
+    .filter-container select {
+        width: 80%; /* Adjust this value to what you find most suitable */
+        min-width: 160px; /* minimum width */
+        box-sizing: border-box; /* This makes sure the select does not overflow its container due to padding */
+    }
+
+    /* 4. Make the reset icons smaller */
+    .reset-filter-icon {
+        transform: scale(0.6); /* Adjust this scale value to what you find most suitable */
+    }
+
+    /* 5. Reduce the distance between the select and the filter icon */
+    .filter-container {
+        padding-right: 20px; /* Decrease padding to reduce distance */
+    }
+}

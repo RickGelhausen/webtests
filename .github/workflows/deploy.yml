@@ -24,8 +24,22 @@ jobs:
           git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
         shell: bash
 
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            bibtex:
+              - 'bibtex/**/*'
+
+      - name: Build the publication list (if bibtex entry was added or changed)
+        if: steps.filter.outputs.bibtex == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: "scripts/build-publication-list.sh"
+        shell: bash
+
       - name: Run build script for Jekyll-based Github Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: "scripts/builddocs.sh"
+        run: "scripts/build-docs.sh"
         shell: bash
