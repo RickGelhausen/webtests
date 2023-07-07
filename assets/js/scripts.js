@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var visible_count = $('.publication:visible').length;
         $('#publication-count').text(visible_count + " publication(s) found!");
-        document.getElementById('publications').scrollTop = 0;
     }
 
     $('#reset-year-filter').click(function() {
