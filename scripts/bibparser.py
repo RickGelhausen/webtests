@@ -26,6 +26,7 @@ template = Template(template_string)
 
 def format_authors(authors):
     # Replace newlines with space and collapse multiple spaces into one
+    authors = authors.replace("\n", " ")
     authors = re.sub(r'\s+', ' ', authors)
 
     author_list = authors.split(' and ')
