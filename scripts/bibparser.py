@@ -80,6 +80,7 @@ def create_html_page(bib_entries, output_file):
         id = entry.get('ID', '')
         authors, authors_data = format_authors(entry.get('author', ''))
         journal = entry.get('journal', '')
+        journal = journal if journal else format_title(entry.get('booktitle', '').replace("\n", ""))
         year = entry.get('year', '')
         title = format_title(entry.get('title', '').replace("\n", ""))
         link = entry.get('doi', entry.get('url', ''))
