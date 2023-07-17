@@ -4,7 +4,7 @@ import re
 from jinja2 import Template
 
 # Dictionary to replace author names with aliases
-alias_dict = {"S. Lange"         : "Sita J. Saunders",
+ALIAS_DICT = {"S. Lange"         : "Sita J. Saunders",
               "S. J. Lange"      : "Sita J. Saunders",
               "S. J. Saunders"   : "Sita J. Saunders",
               "Sita J. Lange"    : "Sita J. Saunders",
@@ -39,7 +39,7 @@ template_string = '''
 
 template = Template(template_string)
 
-def format_authors(authors, alias_dict):
+def format_authors(authors):
     # Replace newlines with space and collapse multiple spaces into one
     authors = authors.replace("\n", " ")
     authors = re.sub(r'\s+', ' ', authors)
@@ -53,8 +53,8 @@ def format_authors(authors, alias_dict):
         full_name = f'{first_name} {last_name}'
 
         # Check if the author name is in the alias dictionary
-        if full_name in alias_dict:
-            full_name = alias_dict[full_name]
+        if full_name in ALIAS_DICT:
+            full_name = ALIAS_DICT[full_name]
 
         authors_list.append(full_name)
 
