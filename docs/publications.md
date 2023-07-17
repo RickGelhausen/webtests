@@ -9,9 +9,10 @@ title:  Publications
 
 <div class="publications">
 
-  <!-- Search Bar -->
+   <!-- Search Bar and Reset Button -->
   <div class="search-bar">
     <input type="text" id="search-bar" placeholder="Search..." />
+    <div id="reset-all-filters" class="reset-filter-icon"></div>
   </div>
 
   <!-- Filter Panel -->
@@ -22,9 +23,6 @@ title:  Publications
         <select id="year-filter">
           <!-- Years will be added here dynamically -->
         </select>
-      </div>
-      <div class="filter-reset">
-        <img id="reset-year-filter" class="reset-filter-icon" src="{{ site.baseurl }}/assets/images/reset.png">
       </div>
     </div>
     <!-- Filter by Author -->
@@ -58,8 +56,13 @@ title:  Publications
             <option value="Van Dinh Tran">Van Dinh Tran</option>
         </select>
       </div>
-      <div class="filter-reset">
-        <img id="reset-author-filter" class="reset-filter-icon" src="{{ site.baseurl }}/assets/images/reset.png">
+    </div>
+    <!-- Filter by Type -->
+    <div class="filter-container">
+      <div class="select-container">
+        <select id="type-filter">
+          <!-- Types will be added here dynamically -->
+        </select>
       </div>
     </div>
   </div>

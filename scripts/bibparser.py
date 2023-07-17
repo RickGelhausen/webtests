@@ -3,8 +3,23 @@ import bibtexparser
 import re
 from jinja2 import Template
 
+# Dictionary to replace author names with aliases
+alias_dict = {"S. Lange"         : "Sita J. Saunders",
+              "S. J. Lange"      : "Sita J. Saunders",
+              "S. J. Saunders"   : "Sita J. Saunders",
+              "Sita J. Lange"    : "Sita J. Saunders",
+              "R. Backofen"      : "Rolf Backofen",
+              "Martin Mann"      : "Martin Raden",
+              "M. Mann"          : "Martin Raden",
+              "Bjorn Gruning"    : "Björn Grüning",
+              "Bjorn Grüning"    : "Björn Grüning",
+              "Björn Gruning"    : "Björn Grüning",
+              "Bjoern Gruening"  : "Björn Grüning",
+              "Björn A. Grüning" : "Björn Grüning",
+              "Berenice Batut"   : "Bérénice Batut"}
+
 template_string = '''
-<div class="publication" data-author="{{ authors_data }}" data-journal="{{ journal }}" data-year="{{ year }}">
+<div class="publication" data-author="{{ authors_data }}" data-journal="{{ journal }}" data-year="{{ year }}" data-type="{{ type }}">
     <div class="title" name="{{ id }}">
         <a href="{{ href }}">{{ title }}</a>
     </div>
@@ -24,7 +39,7 @@ template_string = '''
 
 template = Template(template_string)
 
-def format_authors(authors):
+def format_authors(authors, alias_dict):
     # Replace newlines with space and collapse multiple spaces into one
     authors = authors.replace("\n", " ")
     authors = re.sub(r'\s+', ' ', authors)
@@ -35,7 +50,13 @@ def format_authors(authors):
         parts = [part.strip() for part in author.split(',')]
         last_name = parts[0]
         first_name = " ".join(parts[1:])  # first name includes all parts except the last
-        authors_list.append(f'{first_name} {last_name}')
+        full_name = f'{first_name} {last_name}'
+
+        # Check if the author name is in the alias dictionary
+        if full_name in alias_dict:
+            full_name = alias_dict[full_name]
+
+        authors_list.append(full_name)
 
     if len(authors_list) > 1:
         last_author = authors_list.pop()
@@ -63,8 +84,9 @@ def create_html_page(bib_entries, output_file):
         title = format_title(entry.get('title', '').replace("\n", ""))
         link = entry.get('doi', entry.get('url', ''))
         href = f"https://doi.org/{link}" if not link.startswith(('http', 'www')) else link
+        entry_type = entry.get('ENTRYTYPE', '')  # New line to get entry type
 
-        html_string += template.render(id=id, authors_data=authors_data, authors=authors, journal=journal, year=year, title=title, link=link, href=href)
+        html_string += template.render(id=id, authors_data=authors_data, authors=authors, journal=journal, year=year, title=title, link=link, href=href, type=entry_type)  # Updated to pass entry type to template
 
     with open(output_file, 'w') as f:
         f.write(html_string)

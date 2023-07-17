@@ -71,23 +71,28 @@
     box-shadow: 0 0 0 2px #719ECE; /* Add a light blue focus ring */
 }
 
-.reset-filter-icon {
+#reset-all-filters {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url("{{ site.baseurl }}/assets/images/reset.png");
     cursor: pointer;
     transition: transform 0.3s;
 }
 
-.reset-filter-icon:hover {
+#reset-all-filters:hover {
     transform: scale(1.1); /* Increase the size of the icon slightly when hovered */
 }
 
-.reset-filter-icon:active {
+#reset-all-filters:active {
     transform: scale(0.9); /* Decrease the size of the icon slightly when clicked */
 }
 
-.reset-filter-icon:focus {
+#reset-all-filters:focus {
     outline: none; /* Remove the default focus outline */
     box-shadow: 0 0 0 2px #719ECE; /* Add a light blue focus ring */
 }
+
 
 #publication-count {
     text-align: center;
@@ -145,11 +150,6 @@
         width: 80%; /* Adjust this value to what you find most suitable */
         min-width: 160px; /* minimum width */
         box-sizing: border-box; /* This makes sure the select does not overflow its container due to padding */
-    }
-
-    /* 4. Make the reset icons smaller */
-    .reset-filter-icon {
-        transform: scale(0.6); /* Adjust this scale value to what you find most suitable */
     }
 
     /* 5. Reduce the distance between the select and the filter icon */
