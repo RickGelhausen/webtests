@@ -9,13 +9,15 @@ title:  Publications
 
 <div class="publications">
 
+<div class="search-and-filter-panel">
    <!-- Search Bar and Reset Button -->
   <div class="search-bar">
     <input type="text" id="search-bar" placeholder="Search..." />
-    <div id="reset-all-filters" class="reset-filter-icon"></div>
+    <div id="reset-all-filters"></div>
   </div>
 
   <!-- Filter Panel -->
+  <button id="filter-toggle-button">Show Filters</button>
   <div class="filter-panel">
     <!-- Filter by Year -->
     <div class="filter-container">
@@ -66,10 +68,13 @@ title:  Publications
       </div>
     </div>
   </div>
-
   <!-- Publication Count -->
   <div id="publication-count">Publication count will be updated here...</div>
 
+</div>
+
   <!-- Publication List -->
   {% include pub-list.html %}
+
+  <button id="back-to-top" title="Back to top">↑</button>
 </div>

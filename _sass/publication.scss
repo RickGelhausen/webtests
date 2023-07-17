@@ -1,56 +1,80 @@
 
 .publications {
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+.search-and-filter-panel {
+    width: 60%;
+    margin: 15px auto 5px;
+    align-items: center;
 }
 
 .search-bar {
-    display: flex; /* Use flex to align items on a line */
-    justify-content: space-between; /* Space elements equally across the line */
-    width: 50%; /* Adjust as per your requirement */
-    margin-top: 15px;
-    margin-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 40px; /* Reserve space for the reset button */
+    display: flex;
+    position: relative;
+    width: 100%;
 }
+
 
 #search-bar {
     flex-grow: 1;
     display: block;
-    width: 50%;
+    width: calc(100% - 20px); /* Adjusted to leave space for the reset button */
     padding: 10px;
     font-family: 'Roboto', sans-serif;
     background-color: white;
-    border-radius: 10px; /* Less rounded corners */
+    border-radius: 10px;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow effect */
-
-    /* Adjust the background position and size to vertically center and resize the magnifying glass */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
-    background-position: 10px center; /* Center the magnifying glass vertically */
+    background-position: 10px center;
     background-repeat: no-repeat;
-    padding-left: 40px; /* to ensure the text does not overlap the icon */
+    padding-left: 40px;
 }
 
+#reset-all-filters {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/reset.png");
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+
+#reset-all-filters:hover {
+    transform: scale(1.1) translateY(-50%);
+}
+
+#reset-all-filters:active {
+    transform: scale(0.9) translateY(-50%); /* Decrease the size of the icon slightly when clicked */
+}
+
+#reset-all-filters:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 0 2px #719ECE; /* Add a light blue focus ring */
+}
+
+
 .filter-panel {
+    width: 80%; /* set the width to 80% */
+    margin: 5px auto; /* center the panel horizontally */
     display: flex;
-    justify-content: space-evenly;
-    width: 50%;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .filter-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding-right: 30px; /* Reserve space for cancel button */
+    flex-grow: 0;
+    min-width: 160px;
+    width: auto;  /* optional */
+    margin-bottom: 10px;
 }
-
-.select-container {
-    width: calc(100% - 30px); /* Adjust for cancel button space */
-}
-
 
 .filter-reset {
     position: absolute;
@@ -83,32 +107,9 @@
     box-shadow: 0 0 0 2px #719ECE; /* Add a light blue focus ring */
 }
 
-#reset-all-filters {
-    display: none;
-    margin-left: 10px;
-    width: 20px;
-    height: 20px;
-    background-image: url("../images/reset.png");
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-#reset-all-filters:hover {
-    transform: scale(1.1); /* Increase the size of the icon slightly when hovered */
-}
-
-#reset-all-filters:active {
-    transform: scale(0.9); /* Decrease the size of the icon slightly when clicked */
-}
-
-#reset-all-filters:focus {
-    outline: none; /* Remove the default focus outline */
-    box-shadow: 0 0 0 2px #719ECE; /* Add a light blue focus ring */
-}
-
 #publication-count {
     text-align: center;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 .publication {
@@ -144,8 +145,49 @@
     margin-bottom: 15px; /* Add more vertical space before the link */
 }
 
+#filter-toggle-button {
+    display: none;
+    margin: auto;  /* centers the button */
+}
+
+
+#back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #344a9a; /* Dark background */
+    color: white; /* White text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 10px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+#back-to-top:hover {
+    background-color: #888; /* Add a dark grey background on hover */
+}
 
 @media (max-width: 960px) {
+
+    .filter-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .filter-panel.expanded {
+        max-height: 500px;  /* or whatever max-height you want */
+    }
+
+
+    .search-and-filter-panel {
+        width: 100%;
+    }
+
     /* 1. Increase the width of the search box */
     .search-bar {
         width: 100%; /* Adjust width considering padding and the icon */
@@ -164,8 +206,8 @@
         box-sizing: border-box; /* This makes sure the select does not overflow its container due to padding */
     }
 
-    /* 5. Reduce the distance between the select and the filter icon */
-    .filter-container {
-        padding-right: 20px; /* Decrease padding to reduce distance */
+    #filter-toggle-button {
+        display: inline-block;
     }
+
 }

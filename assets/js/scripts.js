@@ -9,6 +9,23 @@ document.addEventListener("DOMContentLoaded", function() {
         console.warn('burger or nav elements not found!');
     }
 
+    function toggleResetButtonVisibility() {
+        // get current filter values
+        var search_query = $('#search-bar').val();
+        var filter_year = $('#year-filter').val();
+        var filter_author = $('#author-filter').val();
+        var filter_type = $('#type-filter').val();
+
+        // check if any filter is applied
+        if (search_query || filter_year || filter_author || filter_type) {
+            // if yes, show the reset button
+            $('#reset-all-filters').show();
+        } else {
+            // if no, hide the reset button
+            $('#reset-all-filters').hide();
+        }
+    }
+
     function updatePublications() {
         var search_query = $('#search-bar').val().toLowerCase();
         var filter_year = $('#year-filter').val();
@@ -32,16 +49,37 @@ document.addEventListener("DOMContentLoaded", function() {
         $('#publication-count').text(visible_count + " publication(s) found!");
     }
 
+    function toggleResetButtonVisibility() {
+        // get current filter values
+        var search_query = $('#search-bar').val();
+        var filter_year = $('#year-filter').val();
+        var filter_author = $('#author-filter').val();
+        var filter_type = $('#type-filter').val();
+
+        // check if any filter is applied
+        if (search_query || filter_year || filter_author || filter_type) {
+            // if yes, show the reset button
+            $('#reset-all-filters').show();
+        } else {
+            // if no, hide the reset button
+            $('#reset-all-filters').hide();
+        }
+    }
+
     $('#reset-all-filters').click(function() {
         $('#search-bar').val('');
         $('#year-filter').prop('selectedIndex', 0);
         $('#author-filter').val('');
         $('#type-filter').val('');
         updatePublications();
+        toggleResetButtonVisibility();
         document.getElementById('publications').scrollTop = 0;
     });
 
-    $('#search-bar, #year-filter, #author-filter, #type-filter').on('input change', updatePublications);
+    $('#search-bar, #year-filter, #author-filter, #type-filter').on('input change', function() {
+        updatePublications();
+        toggleResetButtonVisibility();
+    });
 
     var years = {};
     $('.publication').each(function() {
@@ -63,6 +101,28 @@ document.addEventListener("DOMContentLoaded", function() {
     type_filter.append('<option value="">All types</option>');
     Object.keys(types).sort().forEach(function(type) {
         type_filter.append('<option value="' + type + '">' + type + ' (' + types[type] + ')' + '</option>');
+    });
+
+
+    document.getElementById('filter-toggle-button').addEventListener('click', function() {
+        var filterPanel = document.querySelector('.filter-panel');
+        filterPanel.classList.toggle('expanded');
+    });
+
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    $('.main-content').scroll(function() {
+        if ($('.main-content').scrollTop() > 20) {
+            $('#back-to-top').fadeIn();
+        } else {
+            $('#back-to-top').fadeOut();
+        }
+    });
+
+
+    // When the user clicks on the button, scroll to the top of the document
+    $('#back-to-top').click(function() {
+        $('.main-content').animate({scrollTop : 0}, 800);
     });
 
     updatePublications();

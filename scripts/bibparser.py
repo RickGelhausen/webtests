@@ -1,6 +1,7 @@
 import argparse
 import bibtexparser
 import re
+import requests
 from jinja2 import Template
 
 # Dictionary to replace author names with aliases
@@ -18,6 +19,13 @@ ALIAS_DICT = {"S. Lange"         : "Sita J. Saunders",
               "Björn A. Grüning" : "Björn Grüning",
               "Berenice Batut"   : "Bérénice Batut"}
 
+TYPE_DICT = {"article"              : "Article",
+             "inproceedings"        : "Proceedings",
+             "incollection"         : "Book",
+             "inbook"               : "Book",
+             "book"                 : "Book",
+             "default"              : "Other"}
+
 template_string = '''
 <div class="publication" data-author="{{ authors_data }}" data-journal="{{ journal }}" data-year="{{ year }}" data-type="{{ type }}">
     <div class="title" name="{{ id }}">
@@ -31,7 +39,15 @@ template_string = '''
     </div>
     {%- if link %}
     <div class="link">
-        <a href="{{ href }}">{{ link }}</a>
+        <a href="{{ href }}">DOI</a>
+    </div>
+    {%- endif %}
+    <div class="bibtex-file">
+        <a href="{{ bibtex_file_href }}">BIB</a>
+    </div>
+    {%- if pdf_exists %}
+    <div class="pdf-file">
+        <a href="{{ pdf_href }}">PDF</a>
     </div>
     {%- endif %}
 </div>
@@ -86,8 +102,18 @@ def create_html_page(bib_entries, output_file):
         link = entry.get('doi', entry.get('url', ''))
         href = f"https://doi.org/{link}" if not link.startswith(('http', 'www')) else link
         entry_type = entry.get('ENTRYTYPE', '')  # New line to get entry type
+        if entry_type in TYPE_DICT:
+            entry_type = TYPE_DICT[entry_type]
+        else:
+            entry_type = TYPE_DICT["default"]
 
-        html_string += template.render(id=id, authors_data=authors_data, authors=authors, journal=journal, year=year, title=title, link=link, href=href, type=entry_type)  # Updated to pass entry type to template
+        bibtex_file_href = f"https://github.com/RickGelhausen/webtests/blob/gh-pages/bibtex/{id}.bib"
+
+        pdf_href = f"http://www.bioinf.uni-freiburg.de/Publications/{id}.pdf"
+        response = requests.get(pdf_href)
+        pdf_exists = response.status_code == 200
+
+        html_string += template.render(id=id, authors_data=authors_data, authors=authors, journal=journal, year=year, title=title, link=link, href=href, type=entry_type, bibtex_file_href=bibtex_file_href, pdf_exists=pdf_exists, pdf_href=pdf_href)  # Updated to pass entry type to template
 
     with open(output_file, 'w') as f:
         f.write(html_string)
