@@ -5,19 +5,20 @@ import requests
 from jinja2 import Template
 
 # Dictionary to replace author names with aliases
-ALIAS_DICT = {"S. Lange"         : "Sita J. Saunders",
-              "S. J. Lange"      : "Sita J. Saunders",
-              "S. J. Saunders"   : "Sita J. Saunders",
-              "Sita J. Lange"    : "Sita J. Saunders",
-              "R. Backofen"      : "Rolf Backofen",
-              "Martin Mann"      : "Martin Raden",
-              "M. Mann"          : "Martin Raden",
-              "Bjorn Gruning"    : "Björn Grüning",
-              "Bjorn Grüning"    : "Björn Grüning",
-              "Björn Gruning"    : "Björn Grüning",
-              "Bjoern Gruening"  : "Björn Grüning",
-              "Björn A. Grüning" : "Björn Grüning",
-              "Berenice Batut"   : "Bérénice Batut"}
+ALIAS_DICT = {"S. Lange"              : "Sita J. Saunders",
+              "S. J. Lange"           : "Sita J. Saunders",
+              "S. J. Saunders"        : "Sita J. Saunders",
+              "Sita J. Lange"         : "Sita J. Saunders",
+              "R. Backofen"           : "Rolf Backofen",
+              "Martin Mann"           : "Martin Raden",
+              "M. Mann"               : "Martin Raden",
+              "Bjorn Gruning"         : "Björn Grüning",
+              "Bjorn Grüning"         : "Björn Grüning",
+              "Björn Gruning"         : "Björn Grüning",
+              "Bjoern Gruening"       : "Björn Grüning",
+              "Björn A. Grüning"      : "Björn Grüning",
+              "Björn Andreas Grüning" : "Björn Grüning",
+              "Berenice Batut"        : "Bérénice Batut"}
 
 TYPE_DICT = {"article"              : "Article",
              "inproceedings"        : "Proceedings",
@@ -37,16 +38,18 @@ template_string = '''
     <div class="journal">
         {{ journal }}, {{ year }}
     </div>
-    {%- if link %}
-    <div class="link">
-        <a href="{{ href }}">DOI</a>
-    </div>
-    {%- endif %}
-    <div class="bibtex-file">
-        <a href="{{ bibtex_file_href }}">BIB</a>
-    </div>
-    <div class="pdf-file">
-        <a href="{{ pdf_href }}">PDF</a>
+    <div class="button-container">
+        {%- if link %}
+        <div class="link">
+            <a href="{{ href }}">DOI</a>
+        </div>
+        {%- endif %}
+        <div class="bibtex-file">
+            <a href="{{ bibtex_file_href }}">BIB</a>
+        </div>
+        <div class="pdf-file">
+            <a href="{{ pdf_href }}">PDF</a>
+        </div>
     </div>
 </div>
 '''
@@ -105,7 +108,7 @@ def create_html_page(bib_entries, output_file):
         else:
             entry_type = TYPE_DICT["default"]
 
-        bibtex_file_href = f"https://github.com/RickGelhausen/webtests/blob/gh-pages/bibtex/{id}.bib"
+        bibtex_file_href = f"https://github.com/RickGelhausen/webtests/blob/main/bibtex/{id}.bib"
 
         pdf_href = f"http://www.bioinf.uni-freiburg.de/Publications/{id}.pdf"
         # response = requests.get(pdf_href)

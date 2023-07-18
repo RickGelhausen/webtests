@@ -171,6 +171,32 @@
     background-color: #888; /* Add a dark grey background on hover */
 }
 
+.button-container {
+    display: flex;
+    justify-content: start; /* Align the buttons to the left */
+    gap: 10px; /* Space between the buttons */
+}
+
+/* The following classes will style the buttons. */
+.link, .bibtex-file, .pdf-file {
+    flex: 1 0 auto; /* Allow the buttons to shrink if necessary but don't allow them to grow */
+}
+
+.link a, .bibtex-file a, .pdf-file a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #344a9a;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.link a:hover, .bibtex-file a:hover, .pdf-file a:hover {
+    background-color: #283a6d;
+}
+
 @media (max-width: 960px) {
 
     .filter-panel {
