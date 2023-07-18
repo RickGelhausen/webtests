@@ -75,13 +75,14 @@ def format_authors(authors):
 
         authors_list.append(full_name)
 
+    authors_data = ";".join(authors_list)
+
     if len(authors_list) > 1:
         last_author = authors_list.pop()
         authors_formatted = ', '.join(authors_list) + ' and ' + last_author
     else:
         authors_formatted = authors_list[0]
 
-    authors_data = ";".join(authors_list)
     return authors_formatted, authors_data
 
 def format_title(title):

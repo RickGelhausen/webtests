@@ -115,7 +115,7 @@
 .publication {
     margin: 20px;
     margin-bottom: 30px;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px; /* Round corners for a softer, more modern look */
     background-color:#F8F8F8; /* Light grey background */
@@ -135,21 +135,51 @@
     text-align: left;
 }
 
-.publication .authors, .publication .journal {
-    font-style: italic; /* Make authors and journal italic */
-    font-size: 16px; /* Reduce the size compared to the title */
-    margin-bottom: 10px; /* Add some vertical space */
+.publication .authors {
+    font-size: 18px; /* Slightly increase the size */
+    margin-bottom: 10px; /* Maintain the vertical space */
 }
 
-.publication .link {
-    margin-bottom: 15px; /* Add more vertical space before the link */
+.publication .journal {
+    font-style: italic; /* Keep journal italic */
+    font-size: 14px; /* Slightly reduce the size */
+    margin-bottom: 20px; /* Maintain the vertical space */
+}
+
+.publication .button-container {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: flex-start; /* Align the buttons to the left */
+}
+
+.publication .button-container > div {
+    flex: 0 0 auto; /* This will prevent flex items from growing and shrinking, which might be causing unwanted space */
+    margin-right: 15px; /* Add some space to the right of each div */
+}
+
+.publication .button-container > div:last-child {
+    margin-right: 0; /* Remove the right margin from the last div */
+}
+
+.publication .button-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #b3b3b3;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.publication .button-container a:hover {
+    background-color: #344a9a;
 }
 
 #filter-toggle-button {
     display: none;
     margin: auto;  /* centers the button */
 }
-
 
 #back-to-top {
     display: none; /* Hidden by default */
@@ -171,31 +201,6 @@
     background-color: #888; /* Add a dark grey background on hover */
 }
 
-.button-container {
-    display: flex;
-    justify-content: start; /* Align the buttons to the left */
-    gap: 10px; /* Space between the buttons */
-}
-
-/* The following classes will style the buttons. */
-.link, .bibtex-file, .pdf-file {
-    flex: 1 0 auto; /* Allow the buttons to shrink if necessary but don't allow them to grow */
-}
-
-.link a, .bibtex-file a, .pdf-file a {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background-color: #344a9a;
-    border-radius: 4px;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.link a:hover, .bibtex-file a:hover, .pdf-file a:hover {
-    background-color: #283a6d;
-}
 
 @media (max-width: 960px) {
 
