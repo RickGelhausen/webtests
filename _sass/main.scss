@@ -6,8 +6,9 @@ html, body {
 }
 
 .main-content {
-    padding: 50px 50px 100px 50px;
-    padding-top: 50px;
+    padding: 50px 50px 50px 50px;
+    padding-top: 20px;
+    padding-bottom: 0px;
     overflow-y: auto;
     height: calc(100vh - 190px); /* subtract the height of the header and the new navbar */
 }
