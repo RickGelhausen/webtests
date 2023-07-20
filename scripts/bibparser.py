@@ -21,10 +21,15 @@ ALIAS_DICT = {"S. Lange"              : "Sita J. Saunders",
               "Berenice Batut"        : "Bérénice Batut"}
 
 TYPE_DICT = {"article"              : "Article",
-             "inproceedings"        : "Proceedings",
+             "inproceedings"        : "Conference",
+             "proceedings"          : "Conference",
+             "conference"           : "Conference",
              "incollection"         : "Book",
              "inbook"               : "Book",
              "book"                 : "Book",
+             "booklet"              : "Book",
+             "PhDThesis"            : "PhD Thesis",
+             "mastersthesis"        : "Master's Thesis",
              "default"              : "Other"}
 
 template_string = '''

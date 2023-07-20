@@ -125,10 +125,16 @@
 
 .publication .title a {
     text-decoration: none; /* Remove underline from the title link */
-    font-size: 28px; /* Increase the size of the title */
+    font-size: 32px; /* Increase the size of the title */
     display: block; /* Display the title as a block element to add vertical space */
     margin-bottom: 20px; /* Add vertical space below the title */
     text-align: left;
+    color: #344a9a;
+    font-family: "Roboto", sans-serif;
+}
+
+.publication .title a:visited {
+    color: #344a9a;
 }
 
 .publication .authors {
