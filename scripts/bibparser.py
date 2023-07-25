@@ -1,10 +1,10 @@
 import argparse
 import bibtexparser
 import re
-import requests
+
 from jinja2 import Template
 
-# Dictionary to replace author names with aliases
+# Dictionary to replace author names with aliases for the data column (does not affect the displayed author names)
 ALIAS_DICT = {"S. Lange"              : "Sita J. Saunders",
               "S. J. Lange"           : "Sita J. Saunders",
               "S. J. Saunders"        : "Sita J. Saunders",
@@ -106,7 +106,7 @@ def create_html_page(bib_entries, output_file):
         journal = journal if journal else format_title(entry.get('booktitle', '').replace("\n", " "))
         year = entry.get('year', '')
         title = format_title(entry.get('title', '').replace("\n", " "))
-        link = entry.get('doi', entry.get('url', ''))
+        link = entry.get('doi', entry.get('doi', ''))
         href = f"https://doi.org/{link}" if not link.startswith(('http', 'www')) else link
         entry_type = entry.get('ENTRYTYPE', '')  # New line to get entry type
         if entry_type in TYPE_DICT:
