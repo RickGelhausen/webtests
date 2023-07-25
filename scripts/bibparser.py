@@ -106,7 +106,7 @@ def create_html_page(bib_entries, output_file):
         journal = journal if journal else format_title(entry.get('booktitle', '').replace("\n", " "))
         year = entry.get('year', '')
         title = format_title(entry.get('title', '').replace("\n", " "))
-        link = entry.get('doi', entry.get('doi', ''))
+        link = entry.get('doi', entry.get('url', ''))
         href = f"https://doi.org/{link}" if not link.startswith(('http', 'www')) else link
         entry_type = entry.get('ENTRYTYPE', '')  # New line to get entry type
         if entry_type in TYPE_DICT:
