@@ -52,9 +52,11 @@ template_string = '''
         <div class="bibtex-file">
             <a href="{{ bibtex_file_href }}">BIB</a>
         </div>
+        {%- if pdf_exists %}
         <div class="pdf-file">
             <a href="{{ pdf_href }}">PDF</a>
         </div>
+        {%- endif %}
     </div>
 </div>
 '''
@@ -116,11 +118,11 @@ def create_html_page(bib_entries, output_file):
 
         bibtex_file_href = f"https://github.com/RickGelhausen/webtests/blob/main/bibtex/{id}.bib"
 
-        pdf_href = f"http://www.bioinf.uni-freiburg.de/Publications/{id}.pdf"
-        # response = requests.get(pdf_href)
-        # pdf_exists = response.status_code == 200
+        pdf_href = entry.get('pdf', '')
+        if pdf_href:
+            pdf_exists = True
 
-        html_string += template.render(id=id, authors_data=authors_data, authors=authors, journal=journal, year=year, title=title, link=link, href=href, type=entry_type, bibtex_file_href=bibtex_file_href, pdf_href=pdf_href) #, pdf_exists=pdf_exists)  # Updated to pass entry type to template
+        html_string += template.render(id=id, authors_data=authors_data, authors=authors, journal=journal, year=year, title=title, link=link, href=href, type=entry_type, bibtex_file_href=bibtex_file_href, pdf_href=pdf_href, pdf_exists=pdf_exists)  # Updated to pass entry type to template
 
     with open(output_file, 'w') as f:
         f.write(html_string)
