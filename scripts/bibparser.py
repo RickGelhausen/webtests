@@ -17,6 +17,7 @@ ALIAS_DICT = {"S. Lange"              : "Sita J. Saunders",
               "Björn Gruning"         : "Björn Grüning",
               "Bjoern Gruening"       : "Björn Grüning",
               "Björn A. Grüning"      : "Björn Grüning",
+              "Björn A Grüning"       : "Björn Grüning",
               "Björn Andreas Grüning" : "Björn Grüning",
               "Berenice Batut"        : "Bérénice Batut"}
 
@@ -76,6 +77,7 @@ def format_authors(authors):
         first_name = " ".join(parts[1:])  # first name includes all parts except the last
         full_name = f'{first_name} {last_name}'
 
+        full_name = full_name.strip()
         # Check if the author name is in the alias dictionary
         if full_name in ALIAS_DICT:
             full_name = ALIAS_DICT[full_name]
