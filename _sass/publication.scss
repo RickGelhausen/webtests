@@ -28,6 +28,10 @@
     padding-left: 40px;
 }
 
+#search-bar:focus {
+    outline: 2px solid #719ECE; /* Change 'blue' to your desired color */
+  }
+
 #reset-all-filters {
     position: absolute;
     right: -30px;
