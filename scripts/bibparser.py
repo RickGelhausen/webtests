@@ -19,7 +19,12 @@ ALIAS_DICT = {"S. Lange"              : "Sita J. Saunders",
               "Björn A. Grüning"      : "Björn Grüning",
               "Björn A Grüning"       : "Björn Grüning",
               "Björn Andreas Grüning" : "Björn Grüning",
-              "Berenice Batut"        : "Bérénice Batut"}
+              "Berenice Batut"        : "Bérénice Batut",
+              "Tran Van Dinh"         : "Van Dinh Tran",
+              "Dinh Van Tran"         : "Van Dinh Tran",
+              "Dinh V Tran"           : "Van Dinh Tran",
+              "Omer Alkhnbashi"       : "Omer S. Alkhnbashi",
+              "Omer S Alkhnbashi"     : "Omer S. Alkhnbashi"}
 
 TYPE_DICT = {"article"              : "Article",
              "inproceedings"        : "Conference",
