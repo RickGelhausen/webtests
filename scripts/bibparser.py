@@ -119,7 +119,7 @@ def create_html_page(bib_entries, output_file):
         bibtex_file_href = f"https://github.com/RickGelhausen/webtests/blob/main/bibtex/{id}.bib"
 
         pdf_href = entry.get('pdf', '')
-        if pdf_href:
+        if pdf_href != "":
             pdf_exists = True
 
         html_string += template.render(id=id, authors_data=authors_data, authors=authors, journal=journal, year=year, title=title, link=link, href=href, type=entry_type, bibtex_file_href=bibtex_file_href, pdf_href=pdf_href, pdf_exists=pdf_exists)  # Updated to pass entry type to template
