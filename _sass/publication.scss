@@ -234,7 +234,7 @@
 
     /* 2. Reduce the top margin */
     .publications {
-        margin-top: 40px; /* Adjust this value according to your current margin */
+        margin-top: 20px; /* Adjust this value according to your current margin */
     }
 
     /* 3. Make the select boxes smaller */
@@ -246,6 +246,30 @@
 
     #filter-toggle-button {
         display: inline-block;
+    }
+
+    .publication .title a {
+        font-size: 22px; /* Increase the size of the title */
+        margin-bottom: 10px; /* Add vertical space below the title */
+    }
+
+    .publication .authors {
+        line-height: 1.4;
+        font-size: 14px; /* Slightly increase the size */
+        margin-bottom: 10px; /* Maintain the vertical space */
+    }
+
+    .publication .journal {
+        font-size: 12px; /* Slightly reduce the size */
+        margin-bottom: 10px; /* Maintain the vertical space */
+    }
+
+    .publication .button-container a {
+        padding: 8px 18px;
+    }
+
+    .publication .button-container > div {
+        margin-right: 10px; /* Add some space to the right of each div */
     }
 
 }

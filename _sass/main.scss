@@ -10,7 +10,7 @@ html, body {
     padding-top: 20px;
     padding-bottom: 0px;
     overflow-y: auto;
-    height: calc(100vh - 190px); /* subtract the height of the header and the new navbar */
+    height: calc(100vh - 170px); /* subtract the height of the header and the new navbar */
 }
 
 .main-content h1 {
@@ -37,13 +37,14 @@ html, body {
 
 @media (max-width: 1200px) {
     .main-content {
-        padding-top: 80px;
+        padding: 0px 50px 0px 50px;
     }
 }
 
 @media (max-width: 960px) {
     .main-content {
-        padding-top: 40px;
+        padding: 0px 20px 0px 20px;
+        height: calc(100vh - 140px); /* subtract the height of the header and the new navbar */
     }
 }
 

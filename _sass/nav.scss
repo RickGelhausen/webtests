@@ -7,7 +7,7 @@
     padding: 10px 20px;
     width: calc(100% - 40px); // adjust the width to account for the padding
     top: 120px;
-    z-index: 10;
+    z-index: 99;
 }
 
 .navbar ul {
@@ -90,5 +90,6 @@
 
     .nav-open {
         display: flex !important;
+        z-index: 101;
     }
 }

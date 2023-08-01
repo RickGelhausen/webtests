@@ -5,11 +5,11 @@
     padding: 10px 20px;
     background-color: #344a9a;
     color: #fff;
-    max-height: 100px;
+    max-height: 80px;
 }
 
 .logo-bioinf {
-    max-width: 100px;
+    max-width: 80px;
     order: 1;
     margin-left: 60px;
     margin-right: 70px;
@@ -17,7 +17,7 @@
 }
 
 .logo-uni-freiburg {
-    max-width: 350px;
+    max-width: 300px;
     order: 3;
     margin-left: auto;
 }
@@ -31,21 +31,21 @@
     order: 2;
     text-align: center;
     margin: 0 0.5px;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 @media screen and (max-width: 1000px) {
     .logo-bioinf {
         margin: 20px;
-        max-width: 100px;
+        max-width: 80px;
     }
 
     .logo-uni-freiburg {
-        max-width: 300px;
+        max-width: 250px;
     }
 
     .title {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 }
 
