@@ -37,7 +37,7 @@ title:  Publications
             <option value="Alireza Heidari">Alireza Heidari</option>
             <option value="Anika Erxleben">Anika Erxleben</option>
             <option value="Anup Kumar">Anup Kumar</option>
-            <option value="Berenice Batut">Bérénice Batut</option>
+            <option value="Bérénice Batut">Bérénice Batut</option>
             <option value="Björn Grüning">Björn Grüning</option>
             <option value="David López Tabernero">David López Tabernero</option>
             <option value="Dilmurat Yusuf">Dilmurat Yusuf</option>
